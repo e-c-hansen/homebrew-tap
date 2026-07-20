@@ -1,6 +1,6 @@
 cask "minicode" do
-  version "1.0.0"
-  sha256 "4c87a8bb79494153c2e4c26f678aeec8e00eabcb5f6b34aed0348a56e166d60c"
+  version "1.1.0"
+  sha256 "494de1eff9885991b69fc89fdfb672555712fdee97fd62c287e161397de13360"
 
   url "https://github.com/e-c-hansen/homebrew-tap/releases/download/v#{version}/MiniCode.zip"
   name "MiniCode"
@@ -8,10 +8,11 @@ cask "minicode" do
   homepage "https://github.com/e-c-hansen/homebrew-tap"
 
   app "MiniCode.app"
+  binary "#{appdir}/MiniCode.app/Contents/Resources/minicode"   # `minicode` on PATH
 
-  # MiniCode is ad-hoc signed but not notarized (free, no Apple Developer
-  # account). Homebrew quarantines downloads by default, so clear the flag
-  # after install to avoid a Gatekeeper warning on first launch.
+  # Ad-hoc signed but not notarized (free, no Apple Developer account). Homebrew
+  # quarantines downloads by default, so clear the flag after install to avoid a
+  # Gatekeeper warning on first launch.
   postflight do
     system_command "/usr/bin/xattr",
                    args: ["-dr", "com.apple.quarantine", "#{appdir}/MiniCode.app"]
