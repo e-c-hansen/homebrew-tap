@@ -1,11 +1,18 @@
+# Homebrew Cask for MiniCode — install with:
+#
+#   brew install --cask e-c-hansen/tap/minicode
+#
+# This file is the cask. scripts/release.sh stamps the version and checksum into
+# it and copies it into the homebrew-tap repo, which holds nothing else, so edit
+# it here and never there. To cut a new version: scripts/release.sh 1.2.1
 cask "minicode" do
-  version "1.2.0"
-  sha256 "3e59bcc2289af5142b31c75a06669c6214f9081807de14561071b81cd185b870"
+  version "1.2.1"
+  sha256 "b056fcccf3d624ad70f7c28ce439c231804286a7d185eca9a7f7ab76c8b9429d"
 
-  url "https://github.com/e-c-hansen/homebrew-tap/releases/download/v#{version}/MiniCode.zip"
+  url "https://github.com/e-c-hansen/minicode/releases/download/v#{version}/MiniCode.zip"
   name "MiniCode"
   desc "Tiny native code editor, no Electron, no dependencies"
-  homepage "https://github.com/e-c-hansen/homebrew-tap"
+  homepage "https://github.com/e-c-hansen/minicode"
 
   depends_on :macos
 
